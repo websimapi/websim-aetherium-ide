@@ -1,0 +1,141 @@
+body {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    font-family: 'Fira Code', monospace;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+#container {
+    width: 100%;
+    max-width: 900px;
+    background-color: #162447;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(27, 39, 79, 0.7);
+    overflow: hidden;
+}
+
+header {
+    background-color: #1f4068;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #1b1b3a;
+}
+
+header h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: #e43f5a;
+    margin: 0;
+}
+
+header p {
+    color: #a2a2c2;
+    margin: 5px 0 0;
+}
+
+main {
+    padding: 20px;
+}
+
+#editor {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#prompt-input {
+    background-color: #10182b;
+    color: #e0e0e0;
+    border: 1px solid #1f4068;
+    border-radius: 5px;
+    padding: 15px;
+    font-family: 'Fira Code', monospace;
+    font-size: 16px;
+    height: 150px;
+    resize: vertical;
+    margin-bottom: 10px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#prompt-input:focus {
+    outline: none;
+    border-color: #e43f5a;
+    box-shadow: 0 0 10px rgba(228, 63, 90, 0.5);
+}
+
+#run-button {
+    background-color: #e43f5a;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    align-self: flex-end;
+}
+
+#run-button:hover {
+    background-color: #c4344d;
+}
+
+#run-button:active {
+    transform: scale(0.98);
+}
+
+#run-button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+
+#output-container {
+    background-color: #10182b;
+    border-radius: 5px;
+    border: 1px solid #1f4068;
+}
+
+#output-header {
+    background-color: #1f4068;
+    padding: 10px 15px;
+    font-weight: bold;
+    color: #a2a2c2;
+    border-bottom: 1px solid #1f4068;
+}
+
+#output {
+    padding: 20px;
+    min-height: 200px;
+    color: #333;
+    background-color: #fff;
+    border-radius: 0 0 5px 5px;
+    overflow: auto;
+    position: relative;
+    transition: filter 0.3s;
+}
+
+#output.loading {
+    filter: blur(4px) opacity(0.6);
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Orbitron', sans-serif;
+    color: #e43f5a;
+    font-size: 20px;
+    display: none; /* Initially hidden */
+    z-index: 10;
+}
+
+#output.loading + .loader {
+    display: block;
+}
+
